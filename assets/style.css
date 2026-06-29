@@ -1,0 +1,86 @@
+.main {
+    padding-top: 1rem;
+}
+
+/* Buttons */
+
+.stButton > button {
+    width: 100%;
+    border-radius: 14px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+}
+
+/* Metrics */
+
+div[data-testid="metric-container"] {
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(
+        0,
+        0,
+        0,
+        0.08
+    );
+}
+
+/* Alerts */
+
+.stAlert {
+    border-radius: 16px;
+}
+
+/* Progress Bars */
+
+.stProgress > div > div > div {
+    border-radius: 20px;
+}
+
+/* Inputs */
+
+.stTextInput input,
+.stDateInput input,
+.stSelectbox {
+    border-radius: 12px;
+}
+
+/* Cards */
+
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* Section Headers */
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+/* Sidebar */
+
+section[data-testid="stSidebar"] {
+    border-right: 1px solid #e5e7eb;
+}
+
+/* Charts */
+
+.js-plotly-plot {
+    border-radius: 16px;
+}
