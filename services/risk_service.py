@@ -9,6 +9,7 @@ from database import (
 def get_expected_progress():
 
     goal = get_active_goal()
+    print(goal)
 
     if goal is None:
         return 0
