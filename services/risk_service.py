@@ -15,14 +15,22 @@ def get_expected_progress():
         return 0
 
     
-    deadline = goal[2]
+    deadline = str(goal[2])
 
-    created_at = goal[3]
+    # Defensive handling for Cloud Run DB schema mismatch
+    created_at = str(goal[3])
 
-    start_date = datetime.strptime(
-        created_at[:10],
-        "%Y-%m-%d"
-    ).date()
+    if created_at == "Active":
+        created_at = str(goal[4])
+
+    try:
+        start_date = datetime.strptime(
+            created_at[:10],
+            "%Y-%m-%d"
+        ).date()
+    except:
+        # Fallback for production DB issues
+        return 0
 
     deadline_date = datetime.strptime(
         deadline,
