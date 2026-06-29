@@ -22,7 +22,7 @@ goal_id = get_active_goal_id()
 if goal_id is None:
 
     st.switch_page(
-        "pages/1_🎯_Create_Goal.py"
+        "pages/1_🏠_Create_Goal.py"
     )
 
 with open(
