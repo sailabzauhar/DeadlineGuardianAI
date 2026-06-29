@@ -95,7 +95,7 @@ if st.button(
             st.balloons()
 
             st.switch_page(
-                "pages/4_☀️_Daily_Missions.py"
+                "pages/4_Daily_Missions.py"
             )
 
         except Exception as e:
