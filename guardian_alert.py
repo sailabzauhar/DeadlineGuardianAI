@@ -6,8 +6,20 @@ from services.risk_service import (
     get_completion_probability
 )
 
+from database import get_active_goal_id
+
 
 def show_guardian_alert():
+
+    goal_id = get_active_goal_id()
+
+    if goal_id is None:
+
+        st.info(
+            "🎯 Create your first goal to activate Guardian Intelligence."
+        )
+
+        return
 
     risk = get_risk_level()
 
