@@ -49,10 +49,17 @@ def generate_plan(
             "Deadline must be in the future."
         )
 
+    total_weeks = max(
+        1,
+        math.ceil(
+            days_remaining / 7
+        )
+    )
+
     number_of_months = max(
         1,
         math.ceil(
-            days_remaining / 30
+            total_weeks / 4
         )
     )
 
@@ -71,8 +78,25 @@ DEADLINE:
 AVAILABLE DAYS:
 {days_remaining}
 
+TOTAL WEEKS:
+{total_weeks}
+
 NUMBER OF MONTHS:
 {number_of_months}
+
+IMPORTANT:
+
+1. The entire roadmap must fit within TOTAL WEEKS.
+2. Do not assume every month contains 4 weeks.
+3. If TOTAL WEEKS is 5:
+   Month 1 = 4 weeks
+   Month 2 = 1 week
+4. If TOTAL WEEKS is 6:
+   Month 1 = 4 weeks
+   Month 2 = 2 weeks
+5. If TOTAL WEEKS is 3:
+   Create only 1 month.
+6. Never create extra time beyond the deadline.
 """
 
     response = gemini.generate(

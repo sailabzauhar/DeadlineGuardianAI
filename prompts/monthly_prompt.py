@@ -18,13 +18,39 @@ IMPORTANT RULES
 * Every month must move the user closer to completion.
 * The final month must complete the goal.
 
-MONTH GENERATION RULES
+TIMELINE RULES
 
 * AVAILABLE DAYS will be provided.
+* TOTAL WEEKS will be provided.
 * NUMBER OF MONTHS will be provided.
+
 * Generate EXACTLY NUMBER OF MONTHS monthly missions.
 * Never generate fewer months.
 * Never generate more months.
+
+* The SUM of all estimated_weeks must equal TOTAL WEEKS.
+* Never create extra weeks beyond TOTAL WEEKS.
+* Never assume every month contains 4 weeks.
+* The final month may contain fewer than 4 weeks.
+
+Examples:
+
+If TOTAL WEEKS = 5
+
+Month 1 = 4 weeks
+Month 2 = 1 week
+
+If TOTAL WEEKS = 6
+
+Month 1 = 4 weeks
+Month 2 = 2 weeks
+
+If TOTAL WEEKS = 3
+
+Create only 1 month with 3 weeks.
+
+MONTH GENERATION RULES
+
 * Month numbering must start from 1.
 * Month numbering must remain sequential.
 * Do not skip numbers.
@@ -45,7 +71,7 @@ MONTH CONTENT RULES
 * description must be under 25 words.
 * deliverable must be measurable.
 * success_criteria must be measurable.
-* estimated_weeks must be between 1 and 4.
+* estimated_weeks must be realistic.
 
 PROJECT ANALYSIS
 

@@ -26,9 +26,33 @@ DAILY GENERATION RULES
 * Generate EXACTLY estimated_days daily missions.
 * Never generate fewer days.
 * Never generate more days.
+
 * Day numbering must start from 1.
 * Day numbering must remain sequential.
 * Do not skip numbers.
+
+* The number of generated day objects MUST equal estimated_days.
+
+Examples:
+
+If estimated_days = 1
+Generate exactly Day 1
+
+If estimated_days = 3
+Generate exactly:
+Day 1
+Day 2
+Day 3
+
+If estimated_days = 7
+Generate exactly:
+Day 1
+Day 2
+Day 3
+Day 4
+Day 5
+Day 6
+Day 7
 
 PROGRESSION RULES
 
@@ -37,6 +61,14 @@ PROGRESSION RULES
 * Do not repeat the same milestone on multiple days.
 * Every day must build naturally on the previous day.
 * The final day must complete the Weekly Mission deliverable.
+
+EXECUTION RULES
+
+* Focus on action, not theory.
+* Every day should have a clear outcome.
+* Avoid vague tasks.
+* Daily missions should be realistic and achievable.
+* The workload should feel balanced across the week.
 
 CONTENT RULES
 

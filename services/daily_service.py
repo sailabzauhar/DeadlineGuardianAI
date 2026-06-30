@@ -17,6 +17,10 @@ def generate_daily_missions(
     week
 ):
 
+    estimated_days = (
+        week["estimated_days"]
+    )
+
     prompt = f"""
 {DAILY_PROMPT}
 
@@ -36,7 +40,17 @@ SUCCESS CRITERIA:
 {week['success_criteria']}
 
 ESTIMATED DAYS:
-{week['estimated_days']}
+{estimated_days}
+
+IMPORTANT:
+
+Generate EXACTLY {estimated_days} daily missions.
+
+Do not generate fewer days.
+Do not generate more days.
+
+Day numbering must start from 1.
+Day numbering must remain sequential.
 """
 
     response = gemini.generate(
@@ -72,6 +86,12 @@ ESTIMATED DAYS:
 
         raise Exception(
             "Daily planner returned zero days."
+        )
+
+    if len(result["days"]) != estimated_days:
+
+        raise Exception(
+            f"Daily planner generated {len(result['days'])} days instead of {estimated_days}."
         )
 
     return result

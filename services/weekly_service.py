@@ -17,6 +17,10 @@ def generate_weekly_missions(
     month
 ):
 
+    estimated_weeks = (
+        month["estimated_weeks"]
+    )
+
     prompt = f"""
 {WEEKLY_PROMPT}
 
@@ -36,7 +40,17 @@ SUCCESS CRITERIA:
 {month['success_criteria']}
 
 ESTIMATED WEEKS:
-{month['estimated_weeks']}
+{estimated_weeks}
+
+IMPORTANT:
+
+Generate EXACTLY {estimated_weeks} weekly missions.
+
+Do not generate fewer weeks.
+Do not generate more weeks.
+
+Week numbering must start at 1.
+Week numbering must remain sequential.
 """
 
     response = gemini.generate(
@@ -72,6 +86,12 @@ ESTIMATED WEEKS:
 
         raise Exception(
             "Weekly planner returned zero weeks."
+        )
+
+    if len(result["weeks"]) != estimated_weeks:
+
+        raise Exception(
+            f"Weekly planner generated {len(result['weeks'])} weeks instead of {estimated_weeks}."
         )
 
     return result
